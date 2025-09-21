@@ -1,4 +1,5 @@
 import React from 'react';
+import PastEvents from './PastEvents'; 
 
 const events = [
   {
@@ -33,6 +34,7 @@ function EventsPage() {
           ))}
         </div>
       </section>
+      <PastEvents />
     </div>
   );
 }
