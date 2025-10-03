@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import IEEELogo from "../assets/ieee-logo.png";
 import RSETLogo from "../assets/rsetiee-logo.png";
+
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/execom", label: "Execom" },
@@ -13,64 +14,24 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        background: "#fff",
-        justifyContent: "space-between",
-        alignItems: "center",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          padding: "1rem",
-          gap: "10px",
-        }}
-      >
-        <img
-          src={IEEELogo}
-          alt="IEEE Logo"
-          style={{ width: "10rem", background: "#fff" }}
-        />
-        <img
-          src={RSETLogo}
-          alt="RSET Logo"
-          style={{ width: "10rem", background: "#fff" }}
-        />
+    <div className="flex justify-between items-center sticky top-0 z-50 bg-white shadow-md">
+      <div className="flex flex-col items-center p-4 gap-2.5">
+        <img src={IEEELogo} alt="IEEE Logo" className="w-40 bg-white" />
+        <img src={RSETLogo} alt="RSET Logo" className="w-40 bg-white" />
       </div>
-      <nav>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "2.5rem",
-            fontFamily: "Segoe UI, Arial, sans-serif",
-            fontWeight: 600,
-            fontSize: "1.1rem",
-          }}
-        >
+      <nav className="pr-4">
+        <div className="flex items-center justify-center gap-10 font-sans font-semibold text-lg">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.to;
             return (
               <Link
                 key={link.to}
                 to={link.to}
-                style={{
-                  color: isActive ? "#0057b7" : "#333",
-                  textDecoration: "none",
-                  padding: "0.5rem 1.2rem",
-                  borderRadius: "24px",
-                  background: isActive ? "#e6f0fa" : "transparent",
-                  transition: "all 0.2s ease-in-out",
-                  boxShadow: isActive ? "0 2px 8px rgba(0,87,183,0.1)" : "none",
-                }}
+                className={`px-5 py-2 rounded-3xl transition-all duration-200 ${
+                  isActive
+                    ? "text-[#0057b7] bg-[#e6f0fa] shadow-[0_2px_8px_rgba(0,87,183,0.1)]"
+                    : "text-gray-800 hover:text-[#0057b7]"
+                }`}
               >
                 {link.label}
               </Link>
@@ -82,4 +43,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
