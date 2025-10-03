@@ -45,74 +45,99 @@ const testimonials = [
 
 function HomePage() {
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', fontFamily: 'Segoe UI, Arial, sans-serif', background: '#f4f8fb' }}>
-      
+    <div className="max-w-[1200px] mx-auto bg-[#f4f8fb] min-h-screen font-sans p-4">
       {/* Hero Section */}
-      <section style={{ background: 'linear-gradient(90deg, #0057b7 60%, #00aaff 100%)', color: '#fff', borderRadius: '0 0 32px 32px', padding: '3rem 1rem 2rem', textAlign: 'center', marginBottom: '2rem', boxShadow: '0 4px 24px rgba(0,87,183,0.1)' }}>
-        <img src="/vite.svg" alt="IEEE RSET SB Logo" style={{ width: '90px', marginBottom: '1.5rem', filter: 'drop-shadow(0 2px 8px #00336644)' }} />
-        <h1 style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: 700, letterSpacing: '1px' }}>IEEE RSET SB</h1>
-        <p style={{ fontSize: '1.3rem', maxWidth: 650, margin: '0 auto', lineHeight: 1.6 }}>
+      <section className="bg-gradient-to-r from-[#0057b7] from-60% to-[#00aaff] text-white rounded-b-[32px] py-12 px-4 mb-8 text-center shadow-[0_4px_24px_rgba(0,87,183,0.1)]">
+        <img 
+          src="/vite.svg" 
+          alt="IEEE RSET SB Logo" 
+          className="w-[90px] mb-6 mx-auto drop-shadow-[0_2px_8px_#00336644]" 
+        />
+        <h1 className="text-5xl font-bold mb-4 tracking-wider">IEEE RSET SB</h1>
+        <p className="text-xl max-w-[650px] mx-auto leading-relaxed">
           Empowering Innovation & Technology at Rajagiri School of Engineering & Technology
         </p>
       </section>
 
       {/* About Section */}
-      <section id="about" style={{ margin: '2.5rem 0', background: '#fff', borderRadius: '16px', padding: '2rem', boxShadow: '0 2px 12px rgba(0,87,183,0.1)' }}>
-        <h2 style={{ color: '#0057b7', fontWeight: 700, marginBottom: '1rem' }}>About Us</h2>
-        <p style={{ fontSize: '1.1rem', color: '#222', lineHeight: 1.7 }}>
+      <section id="about" className="my-10 bg-white rounded-2xl p-8 shadow-md">
+        <h2 className="text-[#0057b7] font-bold text-2xl mb-4">About Us</h2>
+        <p className="text-lg text-gray-800 leading-relaxed">
           IEEE RSET SB fosters technical excellence and professional growth among students. We organize workshops, seminars, and networking opportunities to empower future engineers and innovators.
         </p>
       </section>
 
       {/* Announcements Section */}
-      <section style={{ margin: '2.5rem 0' }}>
-        <h2 style={{ color: '#0057b7', fontWeight: 700, marginBottom: '1.5rem', textAlign: 'center' }}>Announcements</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
+      <section className="my-10">
+        <h2 className="text-[#0057b7] font-bold text-2xl mb-6 text-center">Announcements</h2>
+        <div className="flex flex-wrap justify-center gap-8">
           {announcements.map((a) => (
-            <div key={a.title} style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', width: '320px', boxShadow: '0 2px 12px rgba(0,87,183,0.1)', textAlign: 'center' }}>
-              <img src={a.img} alt={a.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '8px', marginBottom: '1rem' }} />
-              <h3 style={{ margin: '0.5rem 0', color: '#0057b7', fontWeight: 600 }}>{a.title}</h3>
-              <p style={{ color: '#00aaff', fontWeight: 'bold', marginBottom: '0.5rem' }}>{a.date}</p>
-              <p style={{ color: '#222' }}>{a.description}</p>
+            <div key={a.title} className="bg-white rounded-xl p-6 w-80 shadow-md text-center">
+              <img 
+                src={a.img} 
+                alt={a.title} 
+                className="w-full h-48 object-cover rounded-lg mb-4" 
+              />
+              <h3 className="text-[#0057b7] font-semibold text-xl my-2">{a.title}</h3>
+              <p className="text-[#00aaff] font-bold mb-2">{a.date}</p>
+              <p className="text-gray-800">{a.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Events Section */}
-      <section id="events" style={{ margin: '2.5rem 0', background: '#fff', borderRadius: '16px', padding: '2rem', boxShadow: '0 2px 12px rgba(0,87,183,0.1)' }}>
-        <h2 style={{ color: '#0057b7', fontWeight: 700, marginBottom: '1.5rem', textAlign: 'center' }}>Recent Events</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
+      <section id="events" className="my-10 bg-white rounded-2xl p-8 shadow-md">
+        <h2 className="text-[#0057b7] font-bold text-2xl mb-6 text-center">Recent Events</h2>
+        <div className="flex flex-wrap justify-center gap-8">
           {events.map((event) => (
-            <div key={event.title} style={{ background: '#f9fcff', borderRadius: '10px', padding: '1.5rem', width: '260px', boxShadow: '0 2px 8px rgba(0,87,183,0.1)' }}>
-              <h3 style={{ marginBottom: '0.5rem', color: '#0057b7', fontWeight: 600 }}>{event.title}</h3>
-              <p style={{ fontWeight: 'bold', marginBottom: '0.5rem', color: '#00aaff' }}>{event.date}</p>
-              <p style={{ color: '#222' }}>{event.description}</p>
+            <div key={event.title} className="bg-[#f9fcff] rounded-xl p-6 w-64 shadow-sm">
+              <h3 className="text-[#0057b7] font-semibold text-lg mb-2">{event.title}</h3>
+              <p className="font-bold text-[#00aaff] mb-2">{event.date}</p>
+              <p className="text-gray-800">{event.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section style={{ margin: '2.5rem 0' }}>
-        <h2 style={{ color: '#0057b7', fontWeight: 700, marginBottom: '1.5rem', textAlign: 'center' }}>Testimonials</h2>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', justifyContent: 'center' }}>
+      <section className="my-10">
+        <h2 className="text-[#0057b7] font-bold text-2xl mb-6 text-center">Testimonials</h2>
+        <div className="flex flex-wrap justify-center gap-8">
           {testimonials.map((t) => (
-            <div key={t.name} style={{ background: '#fff', borderRadius: '12px', padding: '1.5rem', width: '320px', boxShadow: '0 2px 12px rgba(0,87,183,0.1)', textAlign: 'center' }}>
-              <img src={t.img} alt={t.name} style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', marginBottom: '1rem', border: '3px solid #0057b7' }} />
-              <h3 style={{ margin: '0.5rem 0', color: '#0057b7', fontWeight: 600 }}>{t.name}</h3>
-              <p style={{ color: '#00aaff', fontWeight: 'bold', marginBottom: '0.5rem' }}>{t.role}</p>
-              <p style={{ fontStyle: 'italic', color: '#444' }}>&quot;{t.quote}&quot;</p>
+            <div key={t.name} className="bg-white rounded-xl p-6 w-80 shadow-md text-center">
+              <img 
+                src={t.img} 
+                alt={t.name} 
+                className="w-20 h-20 rounded-full object-cover mb-4 mx-auto border-[3px] border-[#0057b7]" 
+              />
+              <h3 className="text-[#0057b7] font-semibold text-xl my-2">{t.name}</h3>
+              <p className="text-[#00aaff] font-bold mb-2">{t.role}</p>
+              <p className="italic text-gray-700">&quot;{t.quote}&quot;</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Footer */}
-      <footer style={{ textAlign: 'center', color: '#555', marginTop: '2rem', padding: '1.5rem 0', borderTop: '1px solid #e0e6ed', background: '#fff', borderRadius: '16px 16px 0 0' }}>
-        <div style={{ marginBottom: '0.5rem' }}>
-          <a href="https://facebook.com/meaieeesb" target="_blank" rel="noopener noreferrer" style={{ margin: '0 1rem', color: '#0057b7', fontWeight: 600 }}>Facebook</a>
-          <a href="https://instagram.com/ieeemeasb" target="_blank" rel="noopener noreferrer" style={{ margin: '0 1rem', color: '#0057b7', fontWeight: 600 }}>Instagram</a>
+      <footer className="mt-8 py-6 border-t border-gray-200 bg-white rounded-t-2xl text-center">
+        <div className="mb-2">
+          <a 
+            href="https://facebook.com/meaieeesb" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="mx-4 text-[#0057b7] font-semibold hover:underline"
+          >
+            Facebook
+          </a>
+          <a 
+            href="https://instagram.com/ieeemeasb" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="mx-4 text-[#0057b7] font-semibold hover:underline"
+          >
+            Instagram
+          </a>
           <a href="https://linkedin.com/company/ieeemeasb" target="_blank" rel="noopener noreferrer" style={{ margin: '0 1rem', color: '#0057b7', fontWeight: 600 }}>LinkedIn</a>
         </div>
         &copy; 2025 IEEE RSET SB
