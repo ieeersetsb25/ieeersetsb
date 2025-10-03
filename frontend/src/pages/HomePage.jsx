@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { FaRocket, FaLightbulb, FaUsers, FaCalendarAlt } from "react-icons/fa";
 
 const announcements = [
   {
@@ -47,9 +49,6 @@ const testimonials = [
   },
 ];
 
-import { motion } from "framer-motion";
-import { FaRocket, FaLightbulb, FaUsers, FaCalendarAlt } from "react-icons/fa";
-
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -90,7 +89,7 @@ const features = [
 
 function HomePage() {
   return (
-    <div className="max-w-[1200px] mx-auto bg-[#f4f8fb] min-h-screen font-sans px-4 sm:px-6 lg:px-8 py-6">
+    <div className="max-w-[1200px] mx-auto bg-[#f4f8fb] min-h-screen font-sans px-4 sm:px-6 lg:px-8 py-6 pb-0">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: -20 }}
@@ -106,10 +105,10 @@ function HomePage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block p-3 mb-6 bg-white/20 rounded-full backdrop-blur-sm"
+            className="inline-block p-3 mb-6 bg-white rounded-full backdrop-blur-sm"
           >
             <img
-              src="/vite.svg"
+              src="./src/assets/ieee-logo.png"
               alt="IEEE RSET SB Logo"
               className="w-20 h-20 md:w-24 md:h-24 mx-auto animate-float"
             />
