@@ -110,7 +110,7 @@ function HomePage() {
             <img
               src="./src/assets/ieee-logo.png"
               alt="IEEE RSET SB Logo"
-              className="w-20 h-20 md:w-24 md:h-24 mx-auto animate-float"
+              className="w-10 h-20 md:w-24 md:h-24 mx-auto animate-float"
             />
           </motion.div>
 
