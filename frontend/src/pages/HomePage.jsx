@@ -105,12 +105,12 @@ function HomePage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-block p-3 mb-6 bg-white rounded-full backdrop-blur-sm"
+            className="inline-block p-4 mb-6 bg-white rounded-lg backdrop-blur-sm shadow-md"
           >
             <img
               src="./src/assets/ieee-logo.png"
               alt="IEEE RSET SB Logo"
-              className="w-10 h-20 md:w-24 md:h-24 mx-auto animate-float"
+              className="h-16 w-auto md:h-24 mx-auto"
             />
           </motion.div>
 
